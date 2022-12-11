@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Text To Speech |Aji Creations </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Text To Speech</header>
+      <form action="#">
+        <div class="row">
+          <label>Enter Text</label>
+          <textarea></textarea>
+        </div>
+        <div class="row">
+          <label>Select Voice</label>
+          <div class="outer">
+            <select></select>
+          </div>
+        </div>
+        <button>Convert To Speech</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.watsonAssistantChatOptions = {
+        integrationID: "77c74feb-c1a6-4cac-85ff-d19401c2d534", // The ID of this integration.
+        region: "eu-gb", // The region your integration is hosted in.
+        serviceInstanceID: "2b994459-1a5a-45a0-8955-89a6fd927161", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+       };
+        setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+     </script>
+
+  </body>
+</html>
